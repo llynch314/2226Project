@@ -1,19 +1,46 @@
 
 --- Bubble Sort, Data size: 50000 ---
-Trial 1: 6119.79 ms
-Trial 2: 6041.65 ms
-Trial 3: 5947.12 ms
-Trial 4: 5945.05 ms
-Trial 5: 5988.66 ms
-Average time: 6008.45 ms
+Trial 1: 6228.69 ms
+Trial 4: 6284.54 ms
+Trial 5: 6186.32 ms
+Average time: 6220.26 ms
 
 --- Bubble Sort, Data size: 100000 ---
-Trial 1: 28829 ms
-Trial 2: 29043.2 ms
-Trial 3: 28707.4 ms
-Trial 4: 28611.7 ms
-Trial 5: 29061.9 ms
-Average time: 28850.6 ms
+Trial 1: 29318.3 ms
+Trial 2: 28773.5 ms
+Trial 3: 28460.4 ms
+Trial 4: 28433.4 ms
+Trial 5: 28427.1 ms
+Average time: 28682.5 ms
 
 --- Bubble Sort, Data size: 150000 ---
-Trial 1: 73558 ms
+Trial 1: 71665 ms
+Trial 2: 72590.8 ms
+Trial 3: 72020.6 ms
+Trial 4: 71882 ms
+Trial 5: 71912.5 ms
+Average time: 72014.2 ms
+
+--- Bubble Sort, Data size: 300000 ---
+Trial 1: 313018 ms
+Trial 2: 312796 ms
+Trial 3: 314143 ms
+Trial 4: 313213 ms
+Trial 5: 315301 ms
+Average time: 313694 ms
+
+--- Bubble Sort, Data size: 450000 ---
+Trial 1: 734163 ms
+Trial 2: 714134 ms
+Trial 3: 714710 ms
+Trial 4: 715155 ms
+Trial 5: 715987 ms
+Average time: 718830 ms
+
+--- Bubble Sort, Data size: 600000 ---
+Trial 1: 1.27666e+06 ms
+Trial 2: 1.27773e+06 ms
+Trial 3: 1.27742e+06 ms
+Trial 4: 1.27781e+06 ms
+Trial 5: 1.28717e+06 ms
+Average time: 1.27936e+06 ms
