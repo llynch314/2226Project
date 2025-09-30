@@ -12,10 +12,30 @@ int main() {
 
     cout << "===== Sorting Algorithms Benchmark =====\n";
     cout << "Datasets already generated.\n";
-    cout << "Starting continuous benchmark run...\n";
+    cout << "Choose which benchmark to run:\n";
+    cout << "1. Bubble\n";
+    cout << "2. Selection\n";
+    cout << "3. Insertion\n";
+    cout << "4. Merge\n";
+    cout << "5. Quick\n";
+    cout << "6. Shell\n";
+    cout << "7. Run all\n";
+    cout << "Enter choice: ";
 
-    bm.run(); // run all algorithms on all datasets
+    int choice;
+    cin >> choice;
 
-    cout << "All benchmarks completed. Results saved in *_results.txt files.\n";
+    switch (choice) {
+        case 1: bm.runSingleAlgorithm("Bubble"); break;
+        case 2: bm.runSingleAlgorithm("Selection"); break;
+        case 3: bm.runSingleAlgorithm("Insertion"); break;
+        case 4: bm.runSingleAlgorithm("Merge"); break;
+        case 5: bm.runSingleAlgorithm("Quick"); break;
+        case 6: bm.runSingleAlgorithm("Shell"); break;
+        case 7: bm.run(); break;
+        default: cout << "Invalid choice.\n"; break;
+    }
+
+    cout << "Benchmark(s) complete. Check *_results.txt files.\n";
     return 0;
 }

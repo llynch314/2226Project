@@ -1,0 +1,19 @@
+
+--- Bubble Sort, Data size: 50000 ---
+Trial 1: 6119.79 ms
+Trial 2: 6041.65 ms
+Trial 3: 5947.12 ms
+Trial 4: 5945.05 ms
+Trial 5: 5988.66 ms
+Average time: 6008.45 ms
+
+--- Bubble Sort, Data size: 100000 ---
+Trial 1: 28829 ms
+Trial 2: 29043.2 ms
+Trial 3: 28707.4 ms
+Trial 4: 28611.7 ms
+Trial 5: 29061.9 ms
+Average time: 28850.6 ms
+
+--- Bubble Sort, Data size: 150000 ---
+Trial 1: 73558 ms

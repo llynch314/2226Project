@@ -24,7 +24,6 @@ void Benchmark::run() {
         cout << "=== Finished benchmarks for " << alg << " Sort ===\n";
     }
 }
-
 void Benchmark::runSingleAlgorithm(const string& algorithmName) {
     vector<int> sizes{50000, 100000, 150000, 300000, 450000, 600000};
 
@@ -37,7 +36,7 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
     for (int n : sizes) {
         cout << "[Stage] Running " << algorithmName << " sort for dataset size " << n << "...\n";
 
-        // load existing dataset
+        // Load dataset
         vector<int> base = ds.loadDataset("data_" + to_string(n) + ".txt");
         if (base.empty()) {
             cerr << "Error: dataset file for size " << n << " not found.\n";
@@ -46,6 +45,7 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
 
         double total = 0.0;
         outFile << "\n--- " << algorithmName << " Sort, Data size: " << n << " ---\n";
+        outFile.flush(); // immediately write header
 
         for (int trial = 1; trial <= 5; trial++) {
             cout << "   Trial " << trial << "...\n";
@@ -60,12 +60,15 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
 
             total += t;
 
-            // log each trial to the file immediately
+            // write each trial immediately and flush
             outFile << "Trial " << trial << ": " << t << " ms\n";
+            outFile.flush();
         }
 
         double avg = total / 5.0;
         outFile << "Average time: " << avg << " ms\n";
+        outFile.flush();
+
         cout << "[Done] " << algorithmName << " sort for size " << n
              << " (Avg: " << avg << " ms)\n";
     }
