@@ -3,12 +3,9 @@
 #include <algorithm>
 #include <random>
 #include <iostream>
-#include <vector>
 using namespace std;
 
-const vector<int> sizes = {50000, 100000, 150000, 300000, 450000, 600000};
-
-void writeToFile(const string& filename, const vector<int>& data) {
+void Dataset::writeToFile(const string& filename, const vector<int>& data) {
     ofstream out(filename);
     if (!out.is_open()) {
         cerr << "Error: Could not open file " << filename << "\n";
@@ -20,7 +17,7 @@ void writeToFile(const string& filename, const vector<int>& data) {
     out.close();
 }
 
-void generateDatasets() {
+void Dataset::generateDatasets() {
     random_device rd;
     mt19937 gen(rd());
 
@@ -52,7 +49,7 @@ void generateDatasets() {
     }
 }
 
-vector<int> loadDataset(const string& filename) {
+vector<int> Dataset::loadDataset(const string& filename) {
     ifstream in(filename);
     vector<int> data;
     int num;
