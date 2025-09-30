@@ -43,7 +43,6 @@ int main() {
             cout << "Invalid choice.\n";
         }
     }
-
     cout << "Program exited.\n";
     return 0;
 }
