@@ -1,0 +1,48 @@
+
+--- Insertion Sort, Data size: 50000 ---
+Trial 1: 2034.11 ms
+Trial 2: 2049 ms
+Trial 3: 2040.61 ms
+Trial 4: 2032.93 ms
+Trial 5: 2081.89 ms
+Average time: 2047.71 ms
+
+--- Insertion Sort, Data size: 100000 ---
+Trial 1: 8065.87 ms
+Trial 2: 8034.11 ms
+Trial 3: 8049.99 ms
+Trial 4: 8048.82 ms
+Trial 5: 8072.4 ms
+Average time: 8054.24 ms
+
+--- Insertion Sort, Data size: 150000 ---
+Trial 1: 17945.5 ms
+Trial 2: 18137.4 ms
+Trial 3: 18139.9 ms
+Trial 4: 18135.8 ms
+Trial 5: 18146.4 ms
+Average time: 18101 ms
+
+--- Insertion Sort, Data size: 300000 ---
+Trial 1: 72183.1 ms
+Trial 2: 73336.3 ms
+Trial 3: 72353.8 ms
+Trial 4: 72087.2 ms
+Trial 5: 72043.2 ms
+Average time: 72400.7 ms
+
+--- Insertion Sort, Data size: 450000 ---
+Trial 1: 163571 ms
+Trial 2: 163947 ms
+Trial 3: 163921 ms
+Trial 4: 163888 ms
+Trial 5: 163923 ms
+Average time: 163850 ms
+
+--- Insertion Sort, Data size: 600000 ---
+Trial 1: 290434 ms
+Trial 2: 291451 ms
+Trial 3: 291460 ms
+Trial 4: 291836 ms
+Trial 5: 287884 ms
+Average time: 290613 ms
