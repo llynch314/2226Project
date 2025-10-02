@@ -1,0 +1,48 @@
+
+--- Merge Sort, Data size: 50000 ---
+Trial 1: 12.0998 ms
+Trial 2: 13.1622 ms
+Trial 3: 12.327 ms
+Trial 4: 11.6977 ms
+Trial 5: 11.516 ms
+Average time: 12.1605 ms
+
+--- Merge Sort, Data size: 100000 ---
+Trial 1: 23.4979 ms
+Trial 2: 23.1268 ms
+Trial 3: 22.9204 ms
+Trial 4: 23.3697 ms
+Trial 5: 23.3455 ms
+Average time: 23.2521 ms
+
+--- Merge Sort, Data size: 150000 ---
+Trial 1: 36.6263 ms
+Trial 2: 36.3202 ms
+Trial 3: 35.9363 ms
+Trial 4: 35.498 ms
+Trial 5: 35.9089 ms
+Average time: 36.0579 ms
+
+--- Merge Sort, Data size: 300000 ---
+Trial 1: 75.1691 ms
+Trial 2: 74.0111 ms
+Trial 3: 73.8874 ms
+Trial 4: 73.8775 ms
+Trial 5: 73.2483 ms
+Average time: 74.0387 ms
+
+--- Merge Sort, Data size: 450000 ---
+Trial 1: 112.39 ms
+Trial 2: 110.429 ms
+Trial 3: 111.634 ms
+Trial 4: 111.661 ms
+Trial 5: 110.731 ms
+Average time: 111.369 ms
+
+--- Merge Sort, Data size: 600000 ---
+Trial 1: 157.331 ms
+Trial 2: 167.55 ms
+Trial 3: 153.87 ms
+Trial 4: 148.696 ms
+Trial 5: 149.282 ms
+Average time: 155.346 ms

@@ -1,0 +1,48 @@
+
+--- Selection Sort, Data size: 50000 ---
+Trial 1: 3331.46 ms
+Trial 2: 3333.84 ms
+Trial 3: 3355.91 ms
+Trial 4: 3339.24 ms
+Trial 5: 3350.56 ms
+Average time: 3342.2 ms
+
+--- Selection Sort, Data size: 100000 ---
+Trial 1: 13952 ms
+Trial 2: 13539.8 ms
+Trial 3: 13390.3 ms
+Trial 4: 13429.7 ms
+Trial 5: 13394.2 ms
+Average time: 13541.2 ms
+
+--- Selection Sort, Data size: 150000 ---
+Trial 1: 30226.9 ms
+Trial 2: 30193.9 ms
+Trial 3: 30144 ms
+Trial 4: 30181.6 ms
+Trial 5: 30134.1 ms
+Average time: 30176.1 ms
+
+--- Selection Sort, Data size: 300000 ---
+Trial 1: 120685 ms
+Trial 2: 121015 ms
+Trial 3: 120854 ms
+Trial 4: 121348 ms
+Trial 5: 120689 ms
+Average time: 120918 ms
+
+--- Selection Sort, Data size: 450000 ---
+Trial 1: 270939 ms
+Trial 2: 271262 ms
+Trial 3: 271476 ms
+Trial 4: 271802 ms
+Trial 5: 271320 ms
+Average time: 271360 ms
+
+--- Selection Sort, Data size: 600000 ---
+Trial 1: 483075 ms
+Trial 2: 482739 ms
+Trial 3: 482983 ms
+Trial 4: 483661 ms
+Trial 5: 481995 ms
+Average time: 482891 ms
