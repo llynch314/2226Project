@@ -16,18 +16,19 @@ double Benchmark::timeAlgorithm(void (*sortFunc)(vector<int>&), vector<int> data
     return duration<double, milli>(end - start).count();
 }
 
-void Benchmark::run() {
+void Benchmark::run(const string& prefix) {
     vector<string> algorithms{"Bubble", "Selection", "Insertion", "Merge", "Quick", "Shell"};
     for (const string &alg : algorithms) {
-        cout << "\n=== Starting benchmarks for " << alg << " Sort ===\n";
-        runSingleAlgorithm(alg);
-        cout << "=== Finished benchmarks for " << alg << " Sort ===\n";
+        cout << "\n=== Starting benchmarks for " << alg << " Sort (" << prefix << ") ===\n";
+        runSingleAlgorithm(alg, prefix);
+        cout << "=== Finished benchmarks for " << alg << " Sort (" << prefix << ") ===\n";
     }
 }
-void Benchmark::runSingleAlgorithm(const string& algorithmName) {
+
+void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& prefix) {
     vector<int> sizes{50000, 100000, 150000, 300000, 450000, 600000};
 
-    ofstream outFile(algorithmName + "_results.txt", ios::app);
+    ofstream outFile(algorithmName + "_" + prefix + "_results.txt", ios::app);
     if (!outFile.is_open()) {
         cerr << "Error: could not open results file for " << algorithmName << "\n";
         return;
@@ -36,8 +37,7 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
     for (int n : sizes) {
         cout << "[Stage] Running " << algorithmName << " sort for dataset size " << n << "...\n";
 
-        // Load dataset
-        vector<int> base = ds.loadDataset("data_" + to_string(n) + ".txt");
+        vector<int> base = ds.loadDataset(prefix + to_string(n) + ".txt");
         if (base.empty()) {
             cerr << "Error: dataset file for size " << n << " not found.\n";
             continue;
@@ -45,7 +45,7 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
 
         double total = 0.0;
         outFile << "\n--- " << algorithmName << " Sort, Data size: " << n << " ---\n";
-        outFile.flush(); // immediately write header
+        outFile.flush();
 
         for (int trial = 1; trial <= 5; trial++) {
             cout << "   Trial " << trial << "...\n";
@@ -60,7 +60,6 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
 
             total += t;
 
-            // write each trial immediately and flush
             outFile << "Trial " << trial << ": " << t << " ms\n";
             outFile.flush();
         }
@@ -75,5 +74,5 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName) {
 
     outFile.close();
     cout << "Results for " << algorithmName
-         << " saved to " << algorithmName << "_results.txt\n";
+         << " saved to " << algorithmName << "_" << prefix << "_results.txt\n";
 }
