@@ -1,0 +1,48 @@
+
+--- Shell Sort, Data size: 50000 ---
+Trial 1: 4.0994 ms
+Trial 2: 4.3064 ms
+Trial 3: 4.4761 ms
+Trial 4: 4.5344 ms
+Trial 5: 5.042 ms
+Average time: 4.49166 ms
+
+--- Shell Sort, Data size: 100000 ---
+Trial 1: 8.6501 ms
+Trial 2: 8.4194 ms
+Trial 3: 8.9761 ms
+Trial 4: 8.9563 ms
+Trial 5: 9.0156 ms
+Average time: 8.8035 ms
+
+--- Shell Sort, Data size: 150000 ---
+Trial 1: 13.5718 ms
+Trial 2: 13.3823 ms
+Trial 3: 13.4143 ms
+Trial 4: 13.586 ms
+Trial 5: 13.8198 ms
+Average time: 13.5548 ms
+
+--- Shell Sort, Data size: 300000 ---
+Trial 1: 27.834 ms
+Trial 2: 28.1975 ms
+Trial 3: 28.7644 ms
+Trial 4: 28.4925 ms
+Trial 5: 28.4675 ms
+Average time: 28.3512 ms
+
+--- Shell Sort, Data size: 450000 ---
+Trial 1: 42.5005 ms
+Trial 2: 42.5212 ms
+Trial 3: 42.8369 ms
+Trial 4: 42.9736 ms
+Trial 5: 42.5654 ms
+Average time: 42.6795 ms
+
+--- Shell Sort, Data size: 600000 ---
+Trial 1: 59.0612 ms
+Trial 2: 60.1437 ms
+Trial 3: 58.5544 ms
+Trial 4: 59.3188 ms
+Trial 5: 59.5958 ms
+Average time: 59.3348 ms

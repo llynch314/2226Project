@@ -5,10 +5,12 @@
 #include <fstream>
 #include <chrono>
 #include <vector>
+#include <iomanip>
 using namespace std;
 using namespace chrono;
 
 Dataset ds;
+
 double Benchmark::timeAlgorithm(void (*sortFunc)(vector<int>&), vector<int> data) {
     auto start = high_resolution_clock::now();
     sortFunc(data);
@@ -28,7 +30,9 @@ void Benchmark::run(const string& prefix) {
 void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& prefix) {
     vector<int> sizes{50000, 100000, 150000, 300000, 450000, 600000};
 
-    ofstream outFile(algorithmName + "_" + prefix + "_results.txt", ios::app);
+    // Build output filename to match "Quick_data_sorted_results.txt" style
+    string resultsFile = algorithmName + "_data_" + prefix + "_results.txt";
+    ofstream outFile(resultsFile, ios::app);
     if (!outFile.is_open()) {
         cerr << "Error: could not open results file for " << algorithmName << "\n";
         return;
@@ -37,15 +41,27 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& pr
     for (int n : sizes) {
         cout << "[Stage] Running " << algorithmName << " sort for dataset size " << n << "...\n";
 
-        vector<int> base = ds.loadDataset(prefix + to_string(n) + ".txt");
+        // Select correct dataset filename
+        string filename;
+        if (prefix == "base")
+            filename = "data_" + to_string(n) + ".txt";
+        else if (prefix == "sorted")
+            filename = "data_sorted_" + to_string(n) + ".txt";
+        else if (prefix == "reversed")
+            filename = "data_rev_" + to_string(n) + ".txt";
+        else {
+            cerr << "Error: unknown prefix '" << prefix << "'\n";
+            continue;
+        }
+
+        vector<int> base = ds.loadDataset(filename);
         if (base.empty()) {
-            cerr << "Error: dataset file for size " << n << " not found.\n";
+            cerr << "Error: dataset file " << filename << " not found or empty.\n";
             continue;
         }
 
         double total = 0.0;
         outFile << "\n--- " << algorithmName << " Sort, Data size: " << n << " ---\n";
-        outFile.flush();
 
         for (int trial = 1; trial <= 5; trial++) {
             cout << "   Trial " << trial << "...\n";
@@ -59,20 +75,17 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& pr
             else if (algorithmName == "Shell") t = timeAlgorithm(shellSort, base);
 
             total += t;
-
-            outFile << "Trial " << trial << ": " << t << " ms\n";
-            outFile.flush();
+            outFile << "Trial " << trial << ": " << fixed << setprecision(2) << t << " ms\n";
         }
 
         double avg = total / 5.0;
-        outFile << "Average time: " << avg << " ms\n";
-        outFile.flush();
+        outFile << "Average time: " << fixed << setprecision(2) << avg << " ms\n\n";
 
         cout << "[Done] " << algorithmName << " sort for size " << n
-             << " (Avg: " << avg << " ms)\n";
+             << " (Avg: " << fixed << setprecision(2) << avg << " ms)\n";
     }
 
     outFile.close();
     cout << "Results for " << algorithmName
-         << " saved to " << algorithmName << "_" << prefix << "_results.txt\n";
+         << " saved to " << resultsFile << "\n";
 }

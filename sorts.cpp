@@ -74,7 +74,7 @@ void mergeSort(vector<int>& arr) {
 
 // Quick Sort helpers
 int partition(vector<int>& arr, int low, int high) {
-    int pivot = arr[high];
+    int pivot = arr[high];  // <-- always last element pivot
     int i = low - 1;
     for (int j = low; j < high; j++) {
         if (arr[j] < pivot) {
@@ -86,13 +86,35 @@ int partition(vector<int>& arr, int low, int high) {
     return i + 1;
 }
 
+
 void quickSortHelper(vector<int>& arr, int low, int high) {
-    if (low < high) {
+    while (low < high) {
+        if (high - low < 10) {
+            for (int i = low + 1; i <= high; i++) {
+                int key = arr[i];
+                int j = i - 1;
+                while (j >= low && arr[j] > key) {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+                arr[j + 1] = key;
+            }
+            return;
+        }
+
         int pi = partition(arr, low, high);
-        quickSortHelper(arr, low, pi - 1);
-        quickSortHelper(arr, pi + 1, high);
+
+        if (pi - low < high - pi) {
+            quickSortHelper(arr, low, pi - 1);
+            low = pi + 1;
+        } else {
+            quickSortHelper(arr, pi + 1, high);
+            high = pi - 1;
+        }
     }
 }
+
+
 
 void quickSort(vector<int>& arr) {
     quickSortHelper(arr, 0, arr.size() - 1);
