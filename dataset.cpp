@@ -18,29 +18,25 @@ void Dataset::writeToFile(const string& filename, const vector<int>& data) {
 }
 
 void Dataset::generateDatasets() {
-    random_device rd;
-    mt19937 gen(rd());
+    srand(static_cast<unsigned>(time(0)));
 
     for (int n : sizes) {
-        // Create a pool of unique numbers from 1 to 4,000,000
         vector<int> pool(4'000'000);
-        for (int i = 0; i < 4'000'000; ++i) pool[i] = i + 1;
+        for (int i = 0; i < 4'000'000; ++i)
+            pool[i] = i + 1;
 
-        // Shuffle the pool
-        shuffle(pool.begin(), pool.end(), gen);
+        for (int i = pool.size() - 1; i > 0; --i) {
+            int j = rand() % (i + 1);
+            swap(pool[i], pool[j]);
+        }
 
-        // Take the first n numbers
         vector<int> data(pool.begin(), pool.begin() + n);
-
-        // Random dataset
         writeToFile("data_" + to_string(n) + ".txt", data);
 
-        // Sorted dataset
         vector<int> sortedData = data;
         sort(sortedData.begin(), sortedData.end());
         writeToFile("data_sorted_" + to_string(n) + ".txt", sortedData);
 
-        // Reversed dataset
         vector<int> revData = sortedData;
         reverse(revData.begin(), revData.end());
         writeToFile("data_rev_" + to_string(n) + ".txt", revData);
@@ -48,6 +44,7 @@ void Dataset::generateDatasets() {
         cout << "Generated datasets for size " << n << "\n";
     }
 }
+
 
 vector<int> Dataset::loadDataset(const string& filename) {
     ifstream in(filename);

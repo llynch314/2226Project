@@ -45,21 +45,21 @@ int main() {
 
         if (choice == 0) break;
 
-        // Base data
+        //Base data
         if (choice >= 1 && choice <= 6) {
             static const string algos[] = {"Bubble", "Selection", "Insertion", "Merge", "Quick", "Shell"};
             bm.runSingleAlgorithm(algos[choice-1], "base");
         } else if (choice == 7) {
             bm.run("base");
         }
-        // Sorted data
+        //Sorted data
         else if (choice >= 8 && choice <= 13) {
             static const string algos[] = {"Bubble", "Selection", "Insertion", "Merge", "Quick", "Shell"};
             bm.runSingleAlgorithm(algos[choice-8], "sorted");
         } else if (choice == 14) {
             bm.run("sorted");
         }
-        // Reversed data
+        //Reversed data
         else if (choice >= 15 && choice <= 20) {
             static const string algos[] = {"Bubble", "Selection", "Insertion", "Merge", "Quick", "Shell"};
             bm.runSingleAlgorithm(algos[choice-15], "reversed");

@@ -4,13 +4,15 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 class Benchmark {
 public:
-    void run(const std::string& prefix); // run all algorithms with given dataset type
-    void runSingleAlgorithm(const std::string& algorithmName, const std::string& prefix);
+    void run(const string& prefix);
+    void runSingleAlgorithm(const string& algorithmName, const string& prefix);
 
 private:
-    double timeAlgorithm(void (*sortFunc)(std::vector<int>&), std::vector<int> data);
+    double timeAlgorithm(void (*sortFunc)(vector<int>&), vector<int> data);
 };
 
 

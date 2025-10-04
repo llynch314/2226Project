@@ -30,7 +30,6 @@ void Benchmark::run(const string& prefix) {
 void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& prefix) {
     vector<int> sizes{50000, 100000, 150000, 300000, 450000, 600000};
 
-    // Build output filename to match "Quick_data_sorted_results.txt" style
     string resultsFile = algorithmName + "_data_" + prefix + "_results.txt";
     ofstream outFile(resultsFile, ios::app);
     if (!outFile.is_open()) {
@@ -41,7 +40,6 @@ void Benchmark::runSingleAlgorithm(const string& algorithmName, const string& pr
     for (int n : sizes) {
         cout << "[Stage] Running " << algorithmName << " sort for dataset size " << n << "...\n";
 
-        // Select correct dataset filename
         string filename;
         if (prefix == "base")
             filename = "data_" + to_string(n) + ".txt";

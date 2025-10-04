@@ -1,0 +1,3 @@
+C:\Users\hobne\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\Untitled2.dir/objects.a
+C:\Users\hobne\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\Untitled2.dir/objects.a @CMakeFiles\Untitled2.dir\objects1.rsp
+C:\Users\hobne\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Untitled2.dir/objects.a -Wl,--no-whole-archive -o Untitled2.exe -Wl,--out-implib,libUntitled2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Untitled2.dir\linkLibs.rsp
